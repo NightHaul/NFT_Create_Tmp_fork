@@ -105,13 +105,14 @@ const Home: NextPage = () => {
         nameMap = allowlistAddresses.map( list => list[0]);
         // メタマスクのアドレスがウォレット一覧に存在する行番号を取得
         addressId = nameMap.indexOf(address);
-        // 上記で取得した行番号に並ぶAL数を取得
-        const num = Number(allowlistAddresses[addressId][1]);
+
         // nameMap.indexOf(address);で値がヒットしなかった場合にaddressId が-1となる
         if( addressId == -1){
           // ALをいくつ持っているかをセットする
           setAllowlistUserAmountData(0);
         } else {
+                  // 上記で取得した行番号に並ぶAL数を取得
+        const num = Number(allowlistAddresses[addressId][1]);
           // AL数
           setAlNum(num);
           // 持っているAL数を取得
